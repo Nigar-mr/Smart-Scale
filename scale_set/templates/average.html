@@ -67,7 +67,7 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                       {{ analyz_data }}
+                       {{ analysis_data }}
                     </div>
 
                     <!-- Modal footer -->
@@ -119,6 +119,16 @@
     </script>
     <script>
         $(function () {
+
+            $('#data-analyz-btn').click(function () {
+                $.ajax({
+                    url: window.location.href + "&daterange=" + $("input[name=daterange]").val(),
+                    method: "GET",
+                    success: function(data) {
+                        console.log(data);
+                    }
+                })
+            });
 
             $('input[name="daterange"]').daterangepicker({
                 opens: 'left',

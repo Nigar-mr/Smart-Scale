@@ -3,10 +3,11 @@ from .models import *
 
 
 class RegisterForm(forms.ModelForm):
-    age = forms.DateTimeField(input_formats=["%d/%m/%Y"],widget=forms.DateTimeInput(attrs={
-                'class': 'form-control datetimepicker-input',
-                'data-target': '#datetimepicker1'
-            }))
+    age = forms.DateTimeField(input_formats=["%m/%d/%Y"], widget=forms.DateTimeInput(attrs={
+        'class': 'form-control datetimepicker-input',
+        'data-target': '#datetimepicker1'
+    }))
+
     class Meta:
         model = InfoFields
         fields = ['age', 'gender', 'breed', 'feed', 'special_case']
@@ -14,18 +15,13 @@ class RegisterForm(forms.ModelForm):
             "gender": forms.Select(attrs={"class": "form-control"}),
             "breed": forms.TextInput(attrs={"class": "form-control"}),
             "feed": forms.TextInput(attrs={"class": "form-control"}),
-            "special_case": forms.TextInput(attrs={"class": "form-control"}),
-            "age": forms.DateTimeInput(attrs={
-                'class': 'form-control datetimepicker-input',
-                'data-target': '#datetimepicker1'
-            })
+            "special_case": forms.TextInput(attrs={"class": "form-control"})
         }
         labels = {
             'age': "Yası",
             'gender': 'Cinsiyyət',
             'breed': "Cins",
             'feed': "Yem",
-
         }
 
 
@@ -42,13 +38,15 @@ class LoginForm(forms.Form):
     ))
 
 class EditForm(forms.ModelForm):
-    age = forms.CharField(widget=forms.DateTimeInput(attrs={
-        'class': 'form-control datetimepicker-input',
-        'data-target': '#datetimepicker1'
-    }))
+    # age = forms.CharField(widget=forms.DateTimeInput(attrs={
+    #     'class': 'form-control datetimepicker-input',
+    #     'data-target': '#datetimepicker1'
+    # }))
+    age = forms.DateTimeField(input_formats=["%d/%m/%Y"])
+
     class Meta:
         model = InfoFields
-        fields = [ 'weight', 'breed', 'feed', 'special_case','gender']
+        fields = [ 'weight', 'breed', 'feed', 'special_case','gender', 'age']
         widgets = {
             # "age": forms.DateTimeInput(attrs={
             #     'class': 'form-control datetimepicker-input',

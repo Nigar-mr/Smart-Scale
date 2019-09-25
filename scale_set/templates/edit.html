@@ -25,6 +25,8 @@
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-calendar"></span></span>
                                     </div>
+{#                                    <input type='text' name="age" class="form-control" id='datetimepicker4'/>#}
+
                                 </td>
                             {% else %}
                                 <td>{{ edit_list }}</td>
@@ -43,5 +45,9 @@
 
 {% endblock %}
 {% block js %}
-
-   {% endblock %}
+    <script>
+        $(function () {
+            $("#datetimepicker4").datetimepicker();
+        });
+    </script>
+{% endblock %}

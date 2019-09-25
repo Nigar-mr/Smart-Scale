@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
@@ -90,7 +90,6 @@ def TableView(request):
 
 def EditView(request, pk):
     edit = InfoFields.objects.filter(id=pk).last()
-    print(edit.weight)
     context['form'] = EditForm(instance=edit)
     if request.method == "POST":
         form = EditForm(request.POST, instance=edit)
@@ -120,13 +119,21 @@ def AverageView(request):
         all = request.GET.get('daterange').replace(" ", '')
         start = all[:10].replace('/', '-')
         end = all[11:].replace('/', '-')
-        print(start, end)
-        # object_by_date_analyz = InfoFields.objects.filter(id=id, publish_date__range = [start, end])
-        # context['data_analys'] = object_by_date_analyz
-        # print(object_by_date_analyz)
-        data = analyze_data(id, start, end)
-        context['analyz_data'] = data
-        print(context['analyz_data'])
+        object_by_date_analyz = InfoFields.objects.filter(number=id, publish_date__range=[start, end])
+        context['data_analys'] = object_by_date_analyz
+        data = analyze_data(id,object_by_date_analyz)
+        context['analysis_data'] = data
+        return JsonResponse(data, safe=False)
+        # print(context['analyz_data'])
+    # if request.method == "GET":
+    #     if request.GET.get('daterange'):
+    #         all = request.GET.get('daterange').replace(" ", '')
+    #         start = all[:10].replace('/', '-')
+    #         end = all[11:].replace('/', '-')
+    #         objects_by_date = InfoFields.objects.filter(publish_date__range=[start, end])
+    #         context['analysis_data'] = objects_by_date
+        # else:
+        #     context['objects'] = all_objects
 
     for m in range(1, 13):
 

@@ -8,14 +8,14 @@ def mean(numbers):
     return float(sum(numbers)) / max(len(numbers), 1)
 
 
-def analyze_data(cow_id, from_date, to_date):
+def analyze_data(cow_id,object_by_date_analyz):
     try:
-        df = InfoFields.objects.filter(id=cow_id, date__gte=from_date, date__lte=to_date).values()
+        df = object_by_date_analyz.values()
 
         # df = [{'date': datetime.today(), 'weight': 100.2}, {'date': datetime(2019, 9, 17), 'weight': 83.2}, {'date': datetime(2019, 9, 15), 'weight': 83.2}, \
         # {'date': datetime(2019, 9, 16), 'weight': 100.2}]
 
-        date = [x['date'].strftime('%d/%m/%y') for x in df]
+        date = [x['publish_date'].strftime('%d/%m/%y') for x in df]
         weight = [x['weight'] for x in df]
 
         plt.scatter(date, weight)
@@ -35,8 +35,9 @@ def analyze_data(cow_id, from_date, to_date):
         data = {'pic': graph_name, 'max_weight': maxWeight, 'max_weight_date': maxWeightDate, \
                 'min_weight': minWeight, 'min_weight_date': minWeightDate, 'mean_weight': meanWeight}
         return data
-    except Exception:
-        print('data not found')
+    except Exception as er:
+        print('data not found', er)
 
 
-print(analyze_data(0, 0, 0))
+
+# print(analyze_data(0, 0, 0))
