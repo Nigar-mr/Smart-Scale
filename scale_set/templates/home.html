@@ -5,7 +5,10 @@
     <a class="btn btn-success" href="{% url 'logout' %}" style="float: right; margin-top: 20px; margin-right: 20px; color: #fff;
     background-color: #1b8ae8;
     border-color: #2e6da4; font-size: 18px;">Çıxış</a>
-
+    <a class="btn btn-success" href="{% url 'main' %}"
+       style="margin-top: 20px; margin-left: 80px; height: 34px; font-size: 18px;color: #fff;background-color: #337ab7; border-color: #2e6da4;">Ana
+        Səhifə
+    </a>
     <div class="container" style="padding-left: 0px;padding-right: 0px;width: 1168px;margin-right: 200px;">
         <form method="GET" class="search_area" style="width: 185px;margin-top: 23px;margin-left: 980px;">
             <input class="form-control" type="text" name="daterange" value="{{ request.GET.daterange }}"/>
@@ -40,12 +43,12 @@
                             class="text-center">{{ table_list.age|naturaltime }}</td>
                         <td style="border-bottom: 1px solid black;" class="text-center">{{ table_list.gender }}</td>
                         <td style="border-bottom: 1px solid black;" class="text-center">{{ table_list.breed }}</td>
-                        <td style="border-bottom: 1px solid black;" class="text-center">{{ table_list.feed }}</td>
+                        <td style="border-bottom: 1px solid black;"
+                            class="text-center feed">{{ table_list.feed|last }}</td>
                         <td style="border-bottom: 1px solid black;"
                             class="text-center">{{ table_list.special_case }}</td>
                         <td style="border-bottom: 1px solid black;"
                             class="text-center">{{ table_list.publish_date| date:"F d Y" }}</td>
-                        {#                        <td class="text-center">{{ table_list.publish_date|naturaltime }}</td>#}
                         <td style="border-bottom: 1px solid black;" class="text-center">
                             <a
                                     href="{% url 'average' %}?id={{ table_list.number }}"
@@ -125,9 +128,13 @@
             </div>
         </div>
     {% endfor %}
+
+
+
 {% endblock %}
 
 {% block js %}
+
     <script>
         $(function () {
             $("#datetimepicker1").datetimepicker({

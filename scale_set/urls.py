@@ -5,9 +5,9 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-    path('', HomeView, name='home'),
-    # path('', UpdateView, name='index'),
-    # path('', IndexView, name='index'),
+    path('', MainPage, name='main'),
+    path('contact/', ContactPage, name='contact'),
+    path('home/', HomeView, name='home'),
     path('login/', LoginView, name='login'),
     path('logout', LogOutView, name="logout"),
     path('', TableView, name="table"),
@@ -15,6 +15,6 @@ urlpatterns = [
     path('table/', AverageView, name="average"),
     path('delete/<int:id>', DeleteView, name="delete"),
     # path('alldata/<int:id>/$m=month', AllDataView, name='all-data'),
-    path('alldata/<str:month>', AllDataView,name='all-data')
+    path('alldata/<str:month>', AllDataView,name='all-data'),
 
 ]

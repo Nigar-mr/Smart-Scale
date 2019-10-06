@@ -13,13 +13,13 @@
             <input class="form-control" type="text" name="daterange" value="{{ request.GET.daterange }}"/>
 
 
-{#                        <button class="btn mt-2 btn-sm btn-success" type="submit">Search</button>#}
-                        <button id='data-analyz-btn' type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#myModal">
-                            Data analyz
-                        </button>
-{#            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal#}
-{#            </button>#}
+            {#                        <button class="btn mt-2 btn-sm btn-success" type="submit">Search</button>#}
+            <button id='data-analyz-btn' type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#myModal">
+                Data analyz
+            </button>
+            {#            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal#}
+            {#            </button>#}
         </form>
 
         <button style="margin-top: 20px; height: 34px; font-size: 18px;color: #fff;background-color: #337ab7; border-color: #2e6da4;"
@@ -47,6 +47,7 @@
         </table>
     </div>
     <div class="container">
+
         <!-- Button to Open the Modal -->
 
         {% comment %} <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -67,7 +68,7 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                       {{ analysis_data }}
+                        {{ analysis_data }}
                     </div>
 
                     <!-- Modal footer -->
@@ -124,7 +125,7 @@
                 $.ajax({
                     url: window.location.href + "&daterange=" + $("input[name=daterange]").val(),
                     method: "GET",
-                    success: function(data) {
+                    success: function (data) {
                         console.log(data);
                     }
                 })

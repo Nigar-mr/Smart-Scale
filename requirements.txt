@@ -2,10 +2,12 @@ cycler==0.10.0
 Django==2.2.3
 django-bootstrap-datepicker-plus==3.0.5
 django-datetimepicker==3.14
+django-multiselectfield==0.1.8
 django-widget-tweaks==1.4.5
 kiwisolver==1.1.0
 matplotlib==3.1.1
 numpy==1.17.2
+pandas==0.25.1
 Pillow==6.1.0
 psycopg2==2.8.3
 psycopg2-binary==2.8.3

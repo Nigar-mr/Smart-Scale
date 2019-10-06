@@ -8,7 +8,9 @@ from django.core.paginator import Paginator
 from .serial_app import analyze_data
 from .forms import *
 from .models import *
-
+from django.http import JsonResponse
+import json
+from django.core import serializers
 
 # Create your views here.
 
@@ -79,7 +81,7 @@ def HomeView(request):
             context['objects'] = all_objects
         context["form"] = form
         context['data'] = object
-        return render(request, "home.html", context)
+        return render(request, "test.html", context)
 
 
 def TableView(request):
@@ -90,20 +92,98 @@ def TableView(request):
 
 def EditView(request, pk):
     edit = InfoFields.objects.filter(id=pk).last()
-    context['form'] = EditForm(instance=edit)
+    context['form'] = EditForm(instance=InfoFields.objects.filter(pk=pk).last()
+                               )
     if request.method == "POST":
-        form = EditForm(request.POST, instance=edit)
+        form = EditForm(request.POST, instance=InfoFields.objects.filter(pk=pk).last()
+                        )
         if form.is_valid():
             form.save()
 
             return redirect("home")
 
-
-    context['object']=edit
+    context['object'] = edit
 
     return render(request, 'edit.html', context)
 
 
+# def AverageView(request):
+#     id = request.GET.get("id")
+#     # obj={}
+#     month = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avqust', 'Sentyabr', 'Oktyabr', 'Noyabr',
+#              'Dekabr']
+#     context['month'] = month
+#
+#     result = []
+#
+#     if request.GET.get('daterange', False):
+#         all = request.GET.get('daterange').replace(" ", '')
+#         start = all[:10].replace('/', '-')
+#         end = all[11:].replace('/', '-')
+#         # object_by_date_analyz = InfoFields.objects.filter('json',number=id, publish_date__range=[start, end])
+#         # object_by_date_analyz = json.loads(object_by_date_analyz)
+#         object_by_date_analyz = serializers.serialize('json', InfoFields.objects.filter(number=id, publish_date__range=[start,end]))
+#         object_by_date_analyz = json.loads(object_by_date_analyz)
+#
+#         # context['data_analys'] = object_by_date_analyz
+#         # data = analyze_data(id, object_by_date_analyz)
+#         # context['analysis_data'] = data
+#         # return JsonResponse(data, safe=False)
+#
+#         for data in object_by_date_analyz:
+#             context['analysis_data'] = data['fields']
+#             result.append(context)
+#             # context['data_analys'] = object_by_date_analyz
+#             data = analyze_data(id, result)
+#             # context['analysis_data'] = data
+#             print('result:  ', result)
+#             print('backend', data)
+#             context['analysis_data'] = data
+#             # return JsonResponse(data, safe=False)
+#
+#         data = analyze_data(id, result)
+#         context['analysis_data'] = data
+#         return JsonResponse(data, safe=False)
+#
+#     for m in range(1, 13):
+#
+#         obj = {}
+#
+#         obj["name"] = month[m - 1]
+#         query = InfoFields.objects.filter(number=id, publish_date__month=m, publish_date__year=2019)
+#         if query:
+#             sum = 0
+#             for x in query:
+#                 sum += x.weight
+#             total = sum // query.count()
+#             obj["data1"] = total
+#         else:
+#             obj["data1"] = '-'
+#         result.append(obj)
+#         context['result'] = result
+#         context['id'] = id
+#     return render(request, "average.html", context)
+#
+#     #
+#     # if request.GET.get('daterange', False):
+#     #     all = request.GET.get('daterange').replace(" ", '')
+#     #     start = all[:10].replace('/', '-')
+#     #     end = all[11:].replace('/', '-')
+#     #     object_by_date_analyz = serializers.serialize('json', InfoFields.objects.filter(number=id,
+#     #                                                                                     publish_date__range=[start, end]))
+#     #     object_by_date_analyz = json.loads(object_by_date_analyz)
+#     #
+#     #
+#     #     for data in object_by_date_analyz:
+#     #         context['analysis_data'] = data['fields']
+#     #         result.append(context)
+#     #     # context['data_analys'] = object_by_date_analyz
+#     #     data = analyze_data(id, result)
+#     #     # context['analysis_data'] = data
+#     #     print('result:  ', result)
+#     #     print('backend', data)
+#     #     context['analysis_data'] = data
+#     #     return JsonResponse(data, safe=False)
 
 
 def AverageView(request):
@@ -114,14 +194,28 @@ def AverageView(request):
     context['month'] = month
 
     result = []
-
     if request.GET.get('daterange', False):
         all = request.GET.get('daterange').replace(" ", '')
         start = all[:10].replace('/', '-')
         end = all[11:].replace('/', '-')
+        print('start  ', start)
+        print('end  ', end)
         object_by_date_analyz = InfoFields.objects.filter(number=id, publish_date__range=[start, end])
-        context['data_analys'] = object_by_date_analyz
-        data = analyze_data(id,object_by_date_analyz)
+        object_by_date_analyz = serializers.serialize('json', object_by_date_analyz)
+        print('data object: ', object_by_date_analyz)
+        object_by_date_analyz = json.loads(object_by_date_analyz)
+
+        for data in object_by_date_analyz:
+            contexts = {}
+            contexts['analysis_data'] = data['fields']
+            print('context ', contexts['analysis_data'])
+            result.append(contexts)
+
+        # context['data_analys'] = object_by_date_analyz
+        data = analyze_data(id, result)
+        # context['analysis_data'] = data
+        print('result:  ', result)
+        print('backend', data)
         context['analysis_data'] = data
         return JsonResponse(data, safe=False)
         # print(context['analyz_data'])
@@ -132,8 +226,8 @@ def AverageView(request):
     #         end = all[11:].replace('/', '-')
     #         objects_by_date = InfoFields.objects.filter(publish_date__range=[start, end])
     #         context['analysis_data'] = objects_by_date
-        # else:
-        #     context['objects'] = all_objects
+    # else:
+    #     context['objects'] = all_objects
 
     for m in range(1, 13):
 
@@ -142,10 +236,10 @@ def AverageView(request):
         obj["name"] = month[m - 1]
         query = InfoFields.objects.filter(number=id, publish_date__month=m, publish_date__year=2019)
         if query:
-            sum=0
+            sum = 0
             for x in query:
                 sum += x.weight
-            total=sum//query.count()
+            total = sum // query.count()
             obj["data1"] = total
             # print(month[m-1], obj["data1"])
         else:
@@ -156,18 +250,11 @@ def AverageView(request):
     # print(result)
     return render(request, "average.html", context)
 
+
 def AllDataView(request, month='September'):
     month_list = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avqust', 'Sentyabr', 'Oktyabr', 'Noyabr',
-             'Dekabr']
-
-    # result = []
-
+                  'Dekabr']
     month_num = month_list.index(month) + 1
-    # num=0
-    # for m in range(1, 13):
-    #     if month_list[m - 1] == month:
-    #         num=m
-    # print(num)
     number = request.GET.get("number")
     query = InfoFields.objects.filter(number=number, publish_date__month=month_num, publish_date__year=2019)
     context['all_data'] = query
@@ -184,3 +271,9 @@ def DeleteView(request, id):
     return render(request, "home.html", context)
 
 
+def MainPage(request):
+    return render(request, 'index-3.html')
+
+
+def ContactPage(request):
+    return render(request, 'contact.html')

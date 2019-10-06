@@ -40,11 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'scale_set.apps.ScaleSetConfig',
     'datetimepicker',
     'bootstrap_datepicker_plus',
     'widget_tweaks',
+    # 'multiselectfield',
     'django.contrib.humanize',
+    'scale_set.apps.ScaleSetConfig',
 ]
 
 BOOTSTRAP4 = {
@@ -136,3 +137,6 @@ else:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "static")
     ]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

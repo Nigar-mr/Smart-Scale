@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zxx">
+{% load static %}
+
+<!-- Mirrored from templates.envytheme.com/semental/default/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Sep 2019 18:47:01 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Revolution Slider CSS -->
+    <link rel="stylesheet" href="{% static 'assets/revolution/css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/revolution/css/layers.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/revolution/css/navigation.css' %}">
+
+    <!-- Bootstrap Min CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Animate Min CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <!-- IcoFont Min CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/icofont.min.css' %}">
+    <!-- Odometer Min CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+    <!-- Owl Carousel Min CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <!-- Magnific Popup Min CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+    <!-- MeanMenu CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+    <title>Semental - Stud Farms Business HTML Template</title>
+
+    <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+    <style>
+        .login-bg {
+            background-image: url("{% static 'image/pexels-photo-552766.jpeg' %}");
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Start Preloader Area -->
+<div class="preloader">
+    <div class="loader">
+        <img src="{% static 'image/cute-cartoon-cow-animation-3.gif' %}" alt="preloader">
+
+        <h2>Loading...</h2>
+    </div>
+</div>
+<!-- End Preloader Area -->
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <div class="semental-mobile-nav">
+        <div class="logo">
+            <a href="index-3.html"><img src="{% static 'assets/img/logo.png' %}" alt="logo"></a>
+        </div>
+    </div>
+
+    <div class="semental-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="{% url 'home' %}"><img style="width: 122px;"
+                                                                     src="{% static 'image/logo.png' %}"
+                                                                     alt="logo"></a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{% url 'main' %}" class="nav-link active">Ana Səhifə</a>
+                        </li>
+                        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">əlaqə</a></li>
+                    </ul>
+
+                    <div class="others-options">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'home' %}" class="btn btn-primary">Cədvəl <i
+                                    class="icofont-simple-right"></i></a>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-primary">DAXIL OL <i
+                                    class="icofont-simple-right"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- End Navbar Area -->
+{% block page %}
+    <!-- Start Main Banner -->
+    <div class="slider-area">
+        <div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
+             data-alias="classic4export" data-source="gallery"
+             style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+            <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
+            <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display: none;" data-version="5.4.1">
+
+                <ul><!-- SLIDE  -->
+                    <li data-index="rs-3045" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0"
+                        data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                        data-masterspeed="2000" data-thumb="{% static 'image/photo5242290821137542274.jpg' %}.jpg"
+                        data-rotate="0"
+                        data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+                        data-saveperformance="off" data-title="Intro" data-param1="" data-param2="" data-param3=""
+                        data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                        data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'image/photo5242290821137542274.jpg' %}" alt="image"
+                             data-bgposition="center center" data-kenburns="on" data-duration="10000"
+                             data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0"
+                             data-rotateend="0" data-offsetstart="0 -500" data-offsetend="0 500" data-bgparallax="10"
+                             class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption NotGeneric-Title tp-resizeme" id="slide-3045-layer-1"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-85','-60','-35','-55']"
+                             data-fontsize="['55','55','28','28']" data-lineheight="['70','70','50','50']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 5; white-space: nowrap; text-transform: left;">
+                            Welcome to Semental Farm
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme" id="slide-3045-layer-4"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['3','55','45','20']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 6; white-space: nowrap;text-transform: left;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br> tempor
+                            incididunt ut labore et dolore magna aliqua.
+                        </div>
+
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption NotGeneric-btn tp-resizeme" id="slide-3045-layer-8"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['90','145','145','120']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 7; white-space: nowrap; text-transform: left;cursor: default;">
+                        </div>
+                    </li>
+
+                    <!-- SLIDE  -->
+                    <li data-index="rs-3046" data-transition="fadetotopfadefrombottom" data-slotamount="default"
+                        data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut"
+                        data-easeout="Power3.easeInOut" data-masterspeed="1500"
+                        data-thumb="{% static '/image/photo5242290821137542275.jpg' %}" data-rotate="0"
+                        data-saveperformance="off"
+                        data-title="Parallax" data-param1="" data-param2="" data-param3="" data-param4="" data-param5=""
+                        data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'image/photo5242290821137542275.jpg' %}" alt="image"
+                             data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                             data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-3" id="slide-3046-layer-1"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-85','-60','-35','-55']"
+                             data-fontsize="['55','55','28','28']" data-lineheight="['70','70','50','50']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[10,10,10,10]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 8; white-space: nowrap;text-transform:left;">
+                            Farming fo the future
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-2"
+                             id="slide-3046-layer-4" data-x="['center','center','center','center']"
+                             data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                             data-voffset="['3','55','45','20']" data-width="none" data-height="none"
+                             data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 9; white-space: nowrap;text-transform:left;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br> tempor
+                            incididunt ut labore et dolore magna aliqua.
+                        </div>
+
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption NotGeneric-btn tp-resizeme rs-parallaxlevel-2" id="slide-3045-layer-8"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['90','145','145','120']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 7; white-space: nowrap; text-transform: left;cursor: default;">
+                        </div>
+                    </li>
+
+                    <!-- SLIDE  -->
+                    <li data-index="rs-3049" data-transition="zoomin" data-slotamount="7" data-hideafterloop="0"
+                        data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                        data-masterspeed="2000" data-thumb="{% static 'image/photo5242373821380537314.jpg' %}"
+                        data-rotate="0"
+                        data-saveperformance="off" data-title="Slide 3" data-param1="" data-param2="" data-param3=""
+                        data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                        data-param10="" data-description="">
+
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'image/photo5242373821380537314.jpg' %}" alt="image"
+                             data-bgposition="center center" data-kenburns="on" data-duration="10000"
+                             data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0"
+                             data-rotateend="0" data-offsetstart="0 -500" data-offsetend="0 500" data-bgparallax="10"
+                             class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption NotGeneric-Title tp-resizeme" id="slide-3049-layer-1"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-100','-60','-45','-75']"
+                             data-fontsize="['55','55','28','30']" data-lineheight="['70','70','50','50']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.1,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[10,10,10,10]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 22; white-space: nowrap; text-transform:left;">
+                            Passionate, forward-thinking <br>farming
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption NotGeneric-SubTitle tp-resizeme" id="slide-3049-layer-4"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['28','55','45','25']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 23; white-space: nowrap;text-transform:left;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br> tempor
+                            incididunt ut labore et dolore magna aliqua.
+                        </div>
+
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption NotGeneric-btn tp-resizeme" id="slide-3045-layer-8"
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                             data-y="['middle','middle','middle','middle']" data-voffset="['110','145','145','125']"
+                             data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                             data-responsive_offset="on"
+                             data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 7; white-space: nowrap; text-transform: left;cursor: default;">
+                        </div>
+                    </li>
+                </ul>
+                <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
+            </div>
+        </div><!-- END REVOLUTION SLIDER -->
+    </div>
+    <!-- End Main Banner -->
+
+    <!-- Start Gallery Area -->
+    <section class="gallery-area ptb-80 pb-0">
+        <div class="container">
+            <div class="section-title">
+                <span>Gallery</span>
+                <h2>See Our Gallery</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <div class="row m-0">
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="photo-gallery-item">
+                    <img style="width: 720px; height: 561.91px;" src="{% static 'image/Simmental.jpg' %}" alt="image">
+
+                    <i class="icofont-plus"></i>
+
+                    <a href="{% static 'image/Simmental.jpg' %}" class="popup-btn"></a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="row m-0">
+                    <div class="col-lg-6 col-sm-6 col-md-6 p-0">
+                        <div class="photo-gallery-item">
+                            <img style="width: 360px; height: 280.66px;" src="{% static 'image/Belgian Blue (1).jpg' %}" alt="image">
+
+                            <i class="icofont-plus"></i>
+
+                            <a href="{% static 'image/Belgian Blue (1).jpg' %}" class="popup-btn"></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 col-md-6 p-0">
+                        <div class="photo-gallery-item">
+                            <img style="width: 360px; height: 280.66px;" src="{% static 'image/Brown Swiss.jpg' %}" alt="image">
+
+                            <i class="icofont-plus"></i>
+
+                            <a href="{% static 'image/Brown Swiss.jpg' %}" class="popup-btn"></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-md-12 p-0">
+                        <div class="photo-gallery-item">
+                            <img src="{% static 'assets/img/gallery-img11.jpg' %}" alt="image">
+
+                            <i class="icofont-plus"></i>
+
+                            <a href="{% static 'assets/img/gallery-img11.jpg' %}" class="popup-btn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="photo-gallery-item">
+                    <img src="{% static 'assets/img/gallery-img12.jpg' %}" alt="image">
+
+                    <i class="icofont-plus"></i>
+
+                    <a href="{% static 'assets/img/gallery-img12.jpg' %}" class="popup-btn"></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                <div class="photo-gallery-item">
+                    <img style="width: 360px; height: 280.66px;" src="{% static 'image/Holstein Friesian.jpg' %}" alt="image">
+
+                    <i class="icofont-plus"></i>
+
+                    <a href="{% static 'image/Holstein Friesian.jpg' %}" class="popup-btn"></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                <div class="photo-gallery-item">
+                    <img style="width: 360px; height: 280.66px;" src="{% static 'image/Hereford.jpg' %}" alt="image">
+
+                    <i class="icofont-plus"></i>
+
+                    <a href="{% static 'image/Hereford.jpg' %}" class="popup-btn"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Gallery Area -->
+
+    <!-- Start Products Modal -->
+
+    <div class="modal productsQuickView fade" id="ourfermer" tabindex="-1" role="dialog"
+         aria-labelledby="productsModalCenterTitle" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6">
+
+                        <div class="products-image">
+                            <img src="{% static 'assets/img/about-inner1.jpg' %}" alt="image">
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="products-content">
+                            <h3>Evaporated Milk</h3>
+
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                                Donec
+                                eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+                                eleifend leo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Produts Modal -->
+
+{% endblock %}
+<!-- Start Footer Area -->
+<footer class="footer-area">
+    <div class="copyright-area">
+        <div class="container text-center">
+            <p><i class="icofont-copyright"></i> Copyright 2019 Semental. All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+<!-- End Footer Area -->
+
+<div class="go-top"><i class="icofont-swoosh-up"></i><i class="icofont-swoosh-up"></i></div>
+
+<!-- jQuery Min JS -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<!-- Popper Min JS -->
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<!-- Bootstrap Min JS -->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- MeanMenu JS -->
+<script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+<!-- Appear Min JS -->
+<script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
+<!-- Parallax min JS -->
+<script src="{% static 'assets/js/parallax.min.js' %}"></script>
+<!-- Odometer Min JS -->
+<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+<!-- Owl Carousel Min JS -->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<!-- Magnific Popup Min JS -->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<!-- WOW Min JS -->
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<!-- Form Validator Min JS -->
+<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+<!-- Contact Form Min JS -->
+<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+<!-- ajaxChimp Min JS -->
+<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+<!-- Semental Map JS FILE -->
+<script src="{% static 'assets/js/semental-map.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<!-- Slider Revolution core JavaScript files -->
+<script src="{% static 'assets/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'assets/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+<script src="{% static 'assets/js/rev-slider-custom.js' %}"></script>
+</body>
+
+</html>
